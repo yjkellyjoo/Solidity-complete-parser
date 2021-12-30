@@ -100,11 +100,13 @@ This work includes:
 <!-- GETTING STARTED -->
 
 ## Getting Started
+Following instructions are for those who would like to try out the visitor or the listener. 
+
 ### Prerequisites
 #### Python 3
 Python version 3.8.X (I have used 3.8.5) with [antlr4-python3-runtime](https://pypi.org/project/antlr4-python3-runtime/) package installed.
 ```sh
-    $ pip install antlr4-python3-runtime
+$ pip install antlr4-python3-runtime
 ```
 #### (Optional) ANTLR4
 If you wish to edit the .g4 and try out your own grammar, set up ANTLR4 (I have used version 4.9.2).
@@ -141,6 +143,12 @@ If you wish to edit the .g4 and try out your own grammar, set up ANTLR4 (I have 
 
 [comment]: <> (_For more examples, please refer to the [Documentation]&#40;https://example.com&#41;_)
 
+```shell
+$ antlr4 -o /antlr4-generated/ -Dlanguage=Python3 -visitor Solidity.g4
+```
+
+For more information on the usage options, refer to [ANTLR Tool Command Line Options](https://github.com/antlr/antlr4/blob/master/doc/tool-options.md)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -150,23 +158,23 @@ If you wish to edit the .g4 and try out your own grammar, set up ANTLR4 (I have 
 
 ## Contributing
 
-[comment]: <> (Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.)
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-[comment]: <> (If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".)
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-[comment]: <> (Don't forget to give the project a star! Thanks again!)
+Don't forget to give the project a star! Thanks again!
 
-[comment]: <> (1. Fork the Project)
+1. Fork the Project
 
-[comment]: <> (2. Create your Feature Branch &#40;`git checkout -b feature/AmazingFeature`&#41;)
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 
-[comment]: <> (3. Commit your Changes &#40;`git commit -m 'Add some AmazingFeature'`&#41;)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 
-[comment]: <> (4. Push to the Branch &#40;`git push origin feature/AmazingFeature`&#41;)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
 
-[comment]: <> (5. Open a Pull Request)
+5. Open a Pull Request
 
-[comment]: <> (<p align="right">&#40;<a href="#top">back to top</a>&#41;</p>)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -174,7 +182,7 @@ If you wish to edit the .g4 and try out your own grammar, set up ANTLR4 (I have 
 
 ## License
 
-[comment]: <> (Distributed under the MIT License. See `LICENSE.txt` for more information.)
+Distributed under the GNU General Public License. See [LICENSE](https://github.com/yjkellyjoo/Solidity-complete-parser/LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -186,7 +194,7 @@ If you wish to edit the .g4 and try out your own grammar, set up ANTLR4 (I have 
 
 Yejin Kelly Joo - yejinkellyjoo@gmail.com
 
-Project Link: [https://github.com/yjkellyjoo/Solidity-complete-parser](https://github.com/yjkellyjoo/Solidity-complete-parser)
+Project Link: [github repo](https://github.com/yjkellyjoo/Solidity-complete-parser)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
