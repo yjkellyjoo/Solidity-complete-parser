@@ -76,11 +76,11 @@ The currently maintained [Solidity parser by the Solidity team](https://github.c
 I needed a universal parser which would be compatible with all compiler versions (especially v0.6.0 and lower), so this project is all about building a **complete Solidity parser able to parse all compiler versions of Solidity**. 
 
 This work includes:
-1. _[Solidity Language grammar in ANTLR4](https://github.com/yjkellyjoo/Solidity-complete-parser/Solidity.g4) .g4 format._
+1. _[Solidity Language grammar in ANTLR4](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/Solidity.g4) .g4 format._
 
    The .g4 grammar is an extension of https://github.com/solidity-parser/antlr, where I have revised the grammar to accept code for all Solidity compiler versions up to v0.8.0.
 
-2. _[visitor](https://github.com/yjkellyjoo/Solidity-complete-parser/MySolidityVisitor.py) and [listener](https://github.com/yjkellyjoo/Solidity-complete-parser/MySolidityListener.py) implementation in Python3._
+2. _[visitor](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/MySolidityVisitor.py) and [listener](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/MySolidityListener.py) implementation in Python3._
 
    I went through a lot of twists and turns writing these two because there weren't a lot of examples to refer to. I am opening my code hoping it would help people write their own visitor or listener implementations for their grammar written in ANTLR4. 
  
@@ -182,7 +182,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the GNU General Public License. See [LICENSE](https://github.com/yjkellyjoo/Solidity-complete-parser/LICENSE) for more information.
+Distributed under the GNU General Public License. See [LICENSE](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
