@@ -18,6 +18,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
+
 [comment]: <> ([![Contributors][contributors-shield]][contributors-url])
 
 [comment]: <> ([![Forks][forks-shield]][forks-url])
@@ -28,19 +29,9 @@
 
 [comment]: <> ([![MIT License][license-shield]][license-url])
 
-[comment]: <> ([![LinkedIn][linkedin-shield]][linkedin-url])
 
-
-
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
-
-[comment]: <> (  <a href="https://github.com/yjkellyjoo/Solidity-complete-parser">)
-
-[comment]: <> (    <img src="images/logo.png" alt="Logo" width="80" height="80">)
-
-[comment]: <> (  </a>)
 
 <h3 align="center">Complete Parser for Solidity with ANTLR4</h3>
 
@@ -51,56 +42,28 @@
   </p>
 </div>
 
-
-[comment]: <> (<!-- TABLE OF CONTENTS -->)
-
-[comment]: <> (<details>)
-
-[comment]: <> (  <summary>Table of Contents</summary>)
-
-[comment]: <> (  <ol>)
-
-[comment]: <> (    <li>)
-
-[comment]: <> (      <a href="#about-the-project">About The Project</a>)
-
-[comment]: <> (      <ul>)
-
-[comment]: <> (        <li><a href="#built-with">Built With</a></li>)
-
-[comment]: <> (      </ul>)
-
-[comment]: <> (    </li>)
-
-[comment]: <> (    <li>)
-
-[comment]: <> (      <a href="#getting-started">Getting Started</a>)
-
-[comment]: <> (      <ul>)
-
-[comment]: <> (        <li><a href="#prerequisites">Prerequisites</a></li>)
-
-[comment]: <> (        <li><a href="#installation">Installation</a></li>)
-
-[comment]: <> (      </ul>)
-
-[comment]: <> (    </li>)
-
-[comment]: <> (    <li><a href="#usage">Usage</a></li>)
-
-[comment]: <> (    <li><a href="#roadmap">Roadmap</a></li>)
-
-[comment]: <> (    <li><a href="#contributing">Contributing</a></li>)
-
-[comment]: <> (    <li><a href="#license">License</a></li>)
-
-[comment]: <> (    <li><a href="#contact">Contact</a></li>)
-
-[comment]: <> (    <li><a href="#acknowledgments">Acknowledgments</a></li>)
-
-[comment]: <> (  </ol>)
-
-[comment]: <> (</details>)
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
 
 
@@ -108,32 +71,23 @@
 
 ## About The Project
 
-[comment]: <> ([![Product Name Screen Shot][product-screenshot]]&#40;https://example.com&#41;)
-This project is about building a Solidity Parser able to parse all compiler versions of Solidity. 
+The currently maintained [Solidity parser by the Solidity team](https://github.com/ethereum/solidity/tree/develop/docs/grammar) focuses on parsing the 'latest stable version' of Solidity. The latest stable version of Solidity is v0.8.11 at the moment of writing, but according to my investigations, more than 99% of Ethereum verified smart contracts are compiled with Solidity v0.6.0 and lower. 
 
-[comment]: <> (Why is this necessary? The language version updates vs actual used version in development)
+I needed a universal parser which would be compatible with all compiler versions (especially v0.6.0 and lower), so this project is all about building a **complete Solidity parser able to parse all compiler versions of Solidity**. 
 
 This work includes:
-1. Solidity Language grammar in ANTLR4 .g4 format. 
-2. visitor and listener implementation in Python3. 
+1. _[Solidity Language grammar in ANTLR4](https://github.com/yjkellyjoo/Solidity-complete-parser/Solidity.g4) .g4 format._
 
-The .g4 grammar is an extension of https://github.com/solidity-parser/antlr, 
-where I have revised the grammar to accept code for all Solidity compiler versions up to v0.8.0.
+   The .g4 grammar is an extension of https://github.com/solidity-parser/antlr, where I have revised the grammar to accept code for all Solidity compiler versions up to v0.8.0.
+
+2. _[visitor](https://github.com/yjkellyjoo/Solidity-complete-parser/MySolidityVisitor.py) and [listener](https://github.com/yjkellyjoo/Solidity-complete-parser/MySolidityListener.py) implementation in Python3._
+
+   I went through a lot of twists and turns writing these two because there weren't a lot of examples to refer to. I am opening my code hoping it would help people write their own visitor or listener implementations for their grammar written in ANTLR4. 
+ 
+[comment]: <> (I am open to any questions or need of help, let me know through issues or email. )
 
 
 ### Built With
-
-[comment]: <> (* [Next.js]&#40;https://nextjs.org/&#41;)
-
-[comment]: <> (* [React.js]&#40;https://reactjs.org/&#41;)
-
-[comment]: <> (* [Vue.js]&#40;https://vuejs.org/&#41;)
-
-[comment]: <> (* [Angular]&#40;https://angular.io/&#41;)
-
-[comment]: <> (* [Svelte]&#40;https://svelte.dev/&#41;)
-
-[comment]: <> (* [Laravel]&#40;https://laravel.com&#41;)
 
 * [ANTLR4](https://www.antlr.org/)
 
@@ -146,50 +100,34 @@ where I have revised the grammar to accept code for all Solidity compiler versio
 <!-- GETTING STARTED -->
 
 ## Getting Started
-
-[comment]: <> (This is an example of how you may give instructions on setting up your project locally.)
-
-[comment]: <> (To get a local copy up and running follow these simple example steps.)
-
 ### Prerequisites
+#### Python 3
+Python version 3.8.X (I have used 3.8.5) with [antlr4-python3-runtime](https://pypi.org/project/antlr4-python3-runtime/) package installed.
+```sh
+    $ pip install antlr4-python3-runtime
+```
+#### (Optional) ANTLR4
+If you wish to edit the .g4 and try out your own grammar, set up ANTLR4 (I have used version 4.9.2).
+* For Windows:
+    [Following blog](https://levlaz.org/setting-up-antlr4-on-windows/) gives good step-by-step instructions for Windows.
 
-[comment]: <> (This is an example of how to list things you need to use the software and how to install them.)
+* For Mac:
+  1. install ANTLR
+  ```sh
+  $ cd /usr/local/lib
+  $ curl -O https://www.antlr.org/download/antlr-4.9.2-complete.jar
+  ```
+  
+  2. add CLASSPATH in .bash_profile or an equivalent startup script (.zshrc)
+  ```sh
+  $ export CLASSPATH=".:/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH"
+  ```
 
-[comment]: <> (* npm)
-
-[comment]: <> (  ```sh)
-
-[comment]: <> (  npm install npm@latest -g)
-
-[comment]: <> (  ```)
-
-### Installation
-
-[comment]: <> (1. Get a free API Key at [https://example.com]&#40;https://example.com&#41;)
-
-[comment]: <> (2. Clone the repo)
-
-[comment]: <> (   ```sh)
-
-[comment]: <> (   git clone https://github.com/yjkellyjoo/Solidity-complete-parser.git)
-
-[comment]: <> (   ```)
-
-[comment]: <> (3. Install NPM packages)
-
-[comment]: <> (   ```sh)
-
-[comment]: <> (   npm install)
-
-[comment]: <> (   ```)
-
-[comment]: <> (4. Enter your API in `config.js`)
-
-[comment]: <> (   ```js)
-
-[comment]: <> (   const API_KEY = 'ENTER YOUR API';)
-
-[comment]: <> (   ```)
+  3. create aliases
+  ```sh
+  $ alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+  $ alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+  ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -205,23 +143,6 @@ where I have revised the grammar to accept code for all Solidity compiler versio
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-[comment]: <> (- [] Feature 1)
-
-[comment]: <> (- [] Feature 2)
-
-[comment]: <> (- [] Feature 3)
-
-[comment]: <> (    - [] Nested Feature)
-
-[comment]: <> (See the [open issues]&#40;https://github.com/yjkellyjoo/Solidity-complete-parser/issues&#41; for a full list of proposed features &#40;and known issues&#41;.)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -266,20 +187,6 @@ where I have revised the grammar to accept code for all Solidity compiler versio
 Yejin Kelly Joo - yejinkellyjoo@gmail.com
 
 Project Link: [https://github.com/yjkellyjoo/Solidity-complete-parser](https://github.com/yjkellyjoo/Solidity-complete-parser)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-[comment]: <> (* []&#40;&#41;)
-
-[comment]: <> (* []&#40;&#41;)
-
-[comment]: <> (* []&#40;&#41;)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
