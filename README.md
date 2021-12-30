@@ -109,7 +109,7 @@ Python version 3.8.X (I have used 3.8.5) with [antlr4-python3-runtime](https://p
 $ pip install antlr4-python3-runtime
 ```
 #### (Optional) ANTLR4
-If you wish to edit the .g4 and try out your own grammar, set up ANTLR4 (I have used version 4.9.2).
+If you wish to _edit the .g4 and try out your own grammar_, set up ANTLR4 (I have used version 4.9.2).
 * For Windows:
     [Following blog](https://levlaz.org/setting-up-antlr4-on-windows/) gives good step-by-step instructions for Windows.
 
@@ -139,9 +139,9 @@ If you wish to edit the .g4 and try out your own grammar, set up ANTLR4 (I have 
 
 ## Usage
 
-[comment]: <> (Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.)
 
-[comment]: <> (_For more examples, please refer to the [Documentation]&#40;https://example.com&#41;_)
+
+TODO
 
 ```shell
 $ antlr4 -o /antlr4-generated/ -Dlanguage=Python3 -visitor Solidity.g4
@@ -182,7 +182,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the GNU General Public License. See [LICENSE](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/LICENSE) for more information.
+Distributed under the GNU General Public License v3.0. See [LICENSE](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
