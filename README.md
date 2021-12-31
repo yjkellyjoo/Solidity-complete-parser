@@ -76,11 +76,11 @@ The currently maintained [Solidity parser by the Solidity team](https://github.c
 I needed a universal parser which would be compatible with all compiler versions (especially v0.6.0 and lower), so this project is all about building a **complete Solidity parser able to parse all compiler versions of Solidity**. 
 
 This work includes:
-1. _[Solidity Language grammar in ANTLR4](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/Solidity.g4) .g4 format._
+1. _[`Solidity Language grammar in ANTLR4`](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/Solidity.g4) .g4 format._
 
    The .g4 grammar is an extension of https://github.com/solidity-parser/antlr, where I have revised the grammar to accept code for all Solidity compiler versions up to v0.8.0.
 
-2. _[visitor](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/MySolidityVisitor.py) and [listener](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/MySolidityListener.py) implementation in Python3._
+2. _[`visitor`](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/MySolidityVisitor.py) and [`listener`](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/MySolidityListener.py) implementation in Python3._
 
    I went through a lot of twists and turns writing these two because there weren't a lot of examples to refer to. I am opening my code hoping it would help people write their own visitor or listener implementations for their grammar written in ANTLR4. 
  
@@ -138,11 +138,14 @@ If you wish to _edit the .g4 and try out your own grammar_, set up ANTLR4 (I hav
 <!-- USAGE EXAMPLES -->
 
 ## Usage
+### How to try out the visitor or the listener
+I have written a sample code using the visitor and the listener in [`run_parser.py`](https://github.com/yjkellyjoo/Solidity-complete-parser/blob/main/run_parser.py).
+Detailed explanation is provided through comments in the code. 
 
+Try them out and play with them by adding code lines in the `main` function!
 
-
-TODO
-
+### (Optional) To regenerate lexer and parser
+If you have edited the .g4 file, you will have to regenerate its lexer and parser using the below command. 
 ```shell
 $ antlr4 -o /antlr4-generated/ -Dlanguage=Python3 -visitor Solidity.g4
 ```
@@ -150,7 +153,6 @@ $ antlr4 -o /antlr4-generated/ -Dlanguage=Python3 -visitor Solidity.g4
 For more information on the usage options, refer to [ANTLR Tool Command Line Options](https://github.com/antlr/antlr4/blob/master/doc/tool-options.md)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 
