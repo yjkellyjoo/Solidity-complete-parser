@@ -1,7 +1,7 @@
-import rsc.constants as constants
-from antlr4_generated.SolidityListener import SolidityListener
-from antlr4_generated.SolidityParser import SolidityParser
-from antlr4_generated.SolidityVisitor import SolidityVisitor
+from .rsc import constants as constants
+from .antlr4_generated.SolidityListener import SolidityListener
+from .antlr4_generated.SolidityParser import SolidityParser
+from .antlr4_generated.SolidityVisitor import SolidityVisitor
 
 
 class MySolidityVisitor(SolidityVisitor):

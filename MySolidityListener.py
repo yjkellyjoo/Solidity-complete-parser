@@ -1,5 +1,5 @@
-from antlr4_generated.SolidityParser import SolidityParser
-from antlr4_generated.SolidityListener import SolidityListener
+from .antlr4_generated.SolidityParser import SolidityParser
+from .antlr4_generated.SolidityListener import SolidityListener
 
 
 class MySolidityListener(SolidityListener):
