@@ -6,6 +6,7 @@ class MySolidityListener(SolidityListener):
     def __init__(self):
         self.function_strings = []
         self.function_names = []
+        self.function_lines = []
         self.contract_names = []
 
     def getNodeText(self, ctx, i, var):
@@ -35,7 +36,10 @@ class MySolidityListener(SolidityListener):
             self.function_strings.append("")
             self.getNodeText(ctx, ind, self.function_strings)
 
-    def enterModifierDefinition(self, ctx:SolidityParser.ModifierDefinitionContext):
+            block = ctx.block()
+            self.function_lines.append([block.start.line, block.stop.line])
+
+    def enterModifierDefinition(self, ctx: SolidityParser.ModifierDefinitionContext):
         if ctx.block() is not None:
             ind = len(self.function_names)
 
@@ -43,3 +47,6 @@ class MySolidityListener(SolidityListener):
 
             self.function_strings.append("")
             self.getNodeText(ctx, ind, self.function_strings)
+
+            block = ctx.block()
+            self.function_lines.append([block.start.line, block.stop.line])
